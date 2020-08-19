@@ -1,0 +1,395 @@
+1. Define and explain the three basic types of cloud services and the AWS products that are built based on them?
+The three basic types of cloud services are:
+
+Computing
+Storage
+Networking
+Here are some of the AWS products that are built based on the three cloud service types:
+
+Computing - These include EC2, Elastic Beanstalk, Lambda, Auto-Scaling, and Lightsat.
+
+Storage - These include S3, Glacier, Elastic Block Storage, Elastic File System.
+
+Networking - These include VPC, Amazon CloudFront, Route53
+
+2. What is the relation between the Availability Zone and Region?
+AWS regions are separate geographical areas, like the US-West 1 (North California) and Asia South (Mumbai). On the other hand, availability zones are the areas that are present inside the regions. These are generally isolated zones that can replicate themselves whenever required.
+
+aws region
+
+3. What is auto-scaling?
+Auto-scaling is a function that allows you to provision and launch new instances whenever there is a demand. It allows you to automatically increase or decrease resource capacity in relation to the demand.
+
+4. What is geo-targeting in CloudFront?
+Geo-Targeting is a concept where businesses can show personalized content to their audience based on their geographic location without changing the URL. This helps you create customized content for the audience of a specific geographical area, keeping their needs in the forefront.
+
+5. What are the steps involved in a CloudFormation Solution?
+Here are the steps involved in a CloudFormation solution:
+
+cloud formation
+
+Create or use an existing CloudFormation template using JSON or YAML format.
+Save the code in an S3 bucket, which serves as a repository for the code.
+Use AWS CloudFormation to call the bucket and create a stack on your template. 
+CloudFormation reads the file and understands the services that are called, their order, the relationship between the services, and provisions the services one after the other.
+6. How do you upgrade or downgrade a system with near-zero downtime?
+You can upgrade or downgrade a system with near-zero downtime using the following steps of migration:
+
+Open EC2 console
+Choose Operating System AMI
+Launch an instance with the new instance type
+Install all the updates
+Install applications
+Test the instance to see if it’s working
+If working, deploy the new instance and replace the older instance
+Once it’s deployed, you can upgrade or downgrade the system with near-zero downtime.
+Take home this interview Q&As and get much more. Download the complete AWS Interview Guide here:
+
+7. What are the tools and techniques that you can use in AWS to identify if you are paying more than you should be, and how to correct it?
+You can know that you are paying the correct amount for the resources that you are using by employing the following resources:
+
+Check the Top Services Table
+It is a dashboard in the cost management console that shows you the top five most used services. This will let you know how much money you are spending on the resources in question.
+Cost Explorer
+There are cost explorer services available which will help you to view and analyze your usage costs for the last 13 months. You can also get a cost forecast for the upcoming three months.
+AWS Budgets
+This allows you to plan a budget for the services. Also, it will enable you to check if the current plan meets your budget and the details of how you use the services.
+Cost Allocation Tags
+This helps in identifying the resource that has cost more in a particular month. It lets you organize your resources and cost allocation tags to keep track of your AWS costs.
+8. Is there any other alternative tool to log into the cloud environment other than console?
+The that can help you log into the AWS resources are:
+
+Putty
+AWS CLI for Linux
+AWS CLI for Windows
+AWS CLI for Windows CMD
+AWS SDK
+Eclipse
+9. What services can be used to create a centralized logging solution?
+The essential services that you can use are Amazon CloudWatch Logs, store them in Amazon S3, and then use Amazon Elastic Search to visualize them. You can use Amazon Kinesis Firehose to move the data from Amazon S3 to Amazon ElasticSearch.
+
+centralized logging
+
+10. What are the native AWS Security logging capabilities?
+Most of the AWS services have their logging options. Also, some of them have an account level logging, like in AWS CloudTrail, AWS Config, and others. Let’s take a look at two services in specific:
+
+AWS CloudTrail
+This is a service that provides a history of the AWS API calls for every account. It lets you perform security analysis, resource change tracking, and compliance auditing of your AWS environment as well. The best part about this service is that it enables you to configure it to send notifications via AWS SNS when new logs are delivered.
+
+AWS Config 
+This helps you understand the configuration changes that happen in your environment. This service provides an AWS inventory that includes configuration history, configuration change notification, and relationships between AWS resources. It can also be configured to send information via AWS SNS when new logs are delivered.
+
+AWS Solutions Architect Certification
+
+11. What is a DDoS attack, and what services can minimize them?
+DDoS is a cyber-attack in which the perpetrator accesses a website and creates multiple sessions so that the other legitimate users cannot access the service. The native tools that can help you deny the DDoS attacks on your AWS services are:
+
+AWS Shield
+AWS WAF
+Amazon Route53
+Amazon CloudFront
+ELB
+VPC
+DDOS attack
+
+12. You are trying to provide a service in a particular region, but you do not see the service in that region. Why is this happening, and how do you fix it?
+Not all Amazon AWS services are available in all regions. When Amazon initially launches a new service, it doesn’t get immediately published in all the regions. They start small and then slowly expand to other regions. So, if you don’t see a specific service in your region, chances are the service hasn’t been published in your region yet. However, if you want to get the service that is not available, you can switch to the nearest region that provides the services.
+
+13. How do you set up a system to monitor website metrics in real-time in AWS?
+Amazon CloudWatch helps you to monitor the application status of various AWS services and custom events. It helps you to monitor:
+
+State changes in Amazon EC2
+Auto-scaling lifecycle events
+Scheduled events
+AWS API calls
+Console sign-in events
+amazon cloud watch
+
+14. What are the different types of virtualization in AWS, and what are the differences between them?
+The three major types of virtualization in AWS are: 
+
+Hardware Virtual Machine (HVM)
+It is a fully virtualized hardware, where all the virtual machines act separate from each other. These virtual machines boot by executing a master boot record in the root block device of your image.
+Paravirtualization (PV)
+Paravirtualization-GRUB is the bootloader that boots the PV AMIs. The PV-GRUB chain loads the kernel specified in the menu.
+Paravirtualization on HVM
+PV on HVM helps operating systems take advantage of storage and network I/O available through the host.
+15. Name some of the AWS services that are not region-specific
+AWS services that are not region-specific are:
+
+IAM
+Route 53
+Web Application Firewall 
+CloudFront
+16. What are the differences between NAT Gateways and NAT Instances?
+While both NAT Gateways and NAT Instances serve the same function, they still have some key differences.
+
+Differences
+
+AWS Interview Questions for Amazon EC2
+17. What is the difference between stopping and terminating an EC2 instance? 
+While you may think that both stopping and terminating are the same, there is a difference. When you stop an EC2 instance, it performs a normal shutdown on the instance and moves to a stopped state. However, when you terminate the instance, it is transferred to a stopped state, and the EBS volumes attached to it are deleted and can never be recovered. 
+
+18. What are the different types of EC2 instances based on their costs?
+The three types of EC2 instances are:
+
+On-demand Instance
+It is cheap for a short time but not when taken for the long term
+Spot Instance
+It is less expensive than the on-demand instance and can be bought through bidding. 
+Reserved Instance
+If you are planning to use an instance for a year or more, then this is the right one for you.
+19. How do you set up SSH agent forwarding so that you do not have to copy the key every time you log in?
+Here’s how you accomplish this:
+
+Go to your PuTTY Configuration
+Go to the category SSH -> Auth
+Enable SSH agent forwarding to your instance
+Putty configuration
+
+20. What are Solaris and AIX operating systems? Are they available with AWS?
+Solaris is an operating system that uses SPARC processor architecture, which is not supported by the public cloud currently. 
+
+AIX is an operating system that runs only on Power CPU and not on Intel, which means that you cannot create AIX instances in EC2.
+
+Since both the operating systems have their limitations, they are not currently available with AWS.
+
+21. How do you configure CloudWatch to recover an EC2 instance?
+Here’s how you can configure them:
+
+Create an Alarm using Amazon CloudWatch
+In the Alarm, go to Define Alarm -> Actions tab
+Choose Recover this instance option
+create alarm
+
+22. What are the common types of AMI designs?
+There are many types of AMIs, but some of the common AMIs are:
+
+Fully Baked AMI
+Just Enough Baked AMI (JeOS AMI)
+Hybrid AMI
+AWS Interview Questions for S3
+23. How can you recover/login to an EC2 instance for which you have lost the key?
+Follow the steps provided below to recover an EC2 instance if you have lost the key:
+
+Verify that the EC2Config service is running
+Detach the root volume for the instance
+Attach the volume to a temporary instance
+Modify the configuration file
+Restart the original instance
+24. What are some critical differences between AWS S3 and EBS?
+Here are some differences between AWS S3 and EBS
+
+feature differences
+
+25. How do you allow a user to gain access to a specific bucket?
+You need to follow the four steps provided below to allow access. They are:
+
+Categorize your instances
+Define how authorized users can manage specific servers.
+Lockdown your tags
+Attach your policies to IAM users
+26. How can you monitor S3 cross-region replication to ensure consistency without actually checking the bucket?
+Follow the flow diagram provided below to monitor S3 cross-region replication:
+
+S3 cross region
+
+AWS Interview Questions for VPC
+27. VPC is not resolving the server through DNS. What might be the issue, and how can you fix it?
+To fix this problem, you need to enable the DNS hostname resolution, so that the problem resolves itself.
+
+28. How do you connect multiple sites to a VPC?
+If you have multiple VPN connections, you can provide secure communication between sites using the AWS VPN CloudHub. Here’s a diagram that will show you how to connect various sites to a VPC:
+
+customer gateway
+
+29. Name and explain some security products and features available in VPC?
+Here is a selection of security products and features:
+
+Security groups - This acts as a firewall for the EC2 instances, controlling inbound and outbound traffic at the instance level.
+Network access control lists - It acts as a firewall for the subnets, controlling inbound and outbound traffic at the subnet level.
+Flow logs - These capture the inbound and outbound traffic from the network interfaces in your VPC.
+30. How do you monitor Amazon VPC?
+You can monitor VPC by using:
+
+CloudWatch and CloudWatch logs
+VPC Flow Logs
+General AWS Interview Questions
+31. How can you add an existing instance to a new Auto Scaling group?
+Here’s how you can add an existing instance to a new Auto Scaling group:
+
+Open EC2 console
+Select your instance under Instances
+Choose Actions -> Instance Settings -> Attach to Auto Scaling Group
+Select a new Auto Scaling group
+Attach this group to the Instance
+Edit the Instance if needed
+Once done, you can successfully add the instance to a new Auto Scaling group
+32. What are the factors to consider while migrating to Amazon Web Services?
+Here are the factors to consider during AWS migration:
+
+Operational Costs - These include the cost of infrastructure, ability to match demand and supply, transparency, and others.
+Workforce Productivity 
+Cost avoidance
+Operational resilience
+Business agility
+33. What is RTO and RPO in AWS?
+RTO or Recovery Time Objective is the maximum time your business or organization is willing to wait for a recovery to complete in the wake of an outage. On the other hand, RPO or Recovery Point Objective is the maximum amount of data loss your company is willing to accept as measured in time.
+
+34. If you would like to transfer vast amounts of data, which is the best option among Snowball, Snowball Edge, and Snowmobile?
+AWS Snowball is basically a data transport solution for moving high volumes of data into and out of a specified AWS region. On the other hand, AWS Snowball Edge adds additional computing functions apart from providing a data transport solution. The snowmobile is an exabyte-scale migration service that allows you to transfer data up to 100 PB.
+
+Amazon Web Services (AWS) Career Guide
+The Quick Path to Becoming a Solutions ArchitectGET YOUR COPYAmazon Web Services (AWS) Career Guide
+AWS Interview Questions for CloudFormation
+35. How is AWS CloudFormation different from AWS Elastic Beanstalk?
+Here are some differences between AWS CloudFormation and AWS Elastic Beanstalk:
+
+AWS CloudFormation helps you provision and describe all of the infrastructure resources that are present in your cloud environment. On the other hand, AWS Elastic Beanstalk provides an environment that makes it easy to deploy and run applications in the cloud.
+AWS CloudFormation supports the infrastructure needs of various types of applications, like legacy applications and existing enterprise applications. On the other hand, AWS Elastic Beanstalk is combined with the developer tools to help you manage the lifecycle of your applications.
+36. What are the elements of an AWS CloudFormation template?
+AWS CloudFormation templates are YAML or JSON formatted text files that are comprised of five essential elements, they are:
+
+Template parameters
+Output values
+Data tables
+Resources
+File format version
+37. What happens when one of the resources in a stack cannot be created successfully?
+If the resource in the stack cannot be created, then the CloudFormation automatically rolls back and terminates all the resources that were created in the CloudFormation template. This is a handy feature when you accidentally exceed your limit of Elastic IP addresses or don’t have access to an EC2 AMI.
+
+AWS cloud formation
+
+AWS Interview Questions for Elastic Block Storage
+38. How can you automate EC2 backup using EBS?
+Use the following steps in order to automate EC2 backup using EBS:
+
+Get the list of instances and connect to AWS through API to list the Amazon EBS volumes that are attached locally to the instance.
+List the snapshots of each volume, and assign a retention period of the snapshot. Later on, create a snapshot of each volume.
+Make sure to remove the snapshot if it is older than the retention period.
+39. What is the difference between EBS and Instance Store?
+EBS is a kind of permanent storage in which the data can be restored at a later point. When you save data in the EBS, it stays even after the lifetime of the EC2 instance. On the other hand, Instance Store is temporary storage that is physically attached to a host machine. With an Instance Store, you cannot detach one instance and attach it to another. Unlike in EBS, data in an Instance Store is lost if any instance is stopped or terminated.
+
+40. Can you take a backup of EFS like EBS, and if yes, how?
+Yes, you can use the EFS-to-EFS backup solution to recover from unintended changes or deletion in Amazon EFS. Follow these steps:
+
+Sign in to the AWS Management Console
+Click the launch EFS-to-EFS-restore button
+Use the region selector in the console navigation bar to select region
+Verify if you have chosen the right template on the Select Template page
+Assign a name to your solution stack
+Review the parameters for the template and modify them if necessary
+41. How do you auto-delete old snapshots?
+Here’s the procedure for auto-deleting old snapshots:
+
+As per procedure and best practices, take snapshots of the EBS volumes on Amazon S3.
+Use AWS Ops Automator to handle all the snapshots automatically.
+This allows you to create, copy, and delete Amazon EBS snapshots.
+S3
+
+AWS Interview Questions for Elastic Load Balancing
+42. What are the different types of load balancers in AWS?
+There are three types of load balancers that are supported by Elastic Load Balancing:
+
+Application Load Balancer
+Network Load Balancer
+Classic Load Balancer
+43. What are the different uses of the various load balancers in AWS Elastic Load Balancing?
+Application Load Balancer
+Used if you need flexible application management and TLS termination.
+
+Network Load Balancer
+Used if you require extreme performance and static IPs for your applications.
+
+Classic Load Balancer
+Used if your application is built within the EC2 Classic network
+
+AWS Interview Questions for Security
+44. How can you use AWS WAF in monitoring your AWS applications?
+AWS WAF or AWS Web Application Firewall protects your web applications from web exploitations. It helps you control the traffic flow to your applications. With WAF, you can also create custom rules that block common attack patterns. It can be used for three cases: allow all requests, prevent all requests, and count all requests for a new policy.
+
+45. What are the different AWS IAM categories that you can control?
+Using AWS IAM, you can do the following:
+
+Create and manage IAM users
+Create and manage IAM groups
+Manage the security credentials of the users
+Create and manage policies to grant access to AWS services and resources
+46. What are the policies that you can set for your users’ passwords?
+Here are some of the policies that you can set:
+
+You can set a minimum length of the password, or you can ask the users to add at least one number or special characters in it.
+You can assign requirements of particular character types, including uppercase letters, lowercase letters, numbers, and non-alphanumeric characters.
+You can enforce automatic password expiration, prevent reuse of old passwords, and request for a password reset upon their next AWS sign in.
+You can have the AWS users contact an account administrator when the user has allowed the password to expire. 
+47. What is the difference between an IAM role and an IAM user?
+The two key differences between the IAM role and IAM user are:
+
+An IAM role is an IAM entity that defines a set of permissions for making AWS service requests, while an IAM user has permanent long-term credentials and is used to interact with the AWS services directly.  
+In the IAM role, trusted entities, like IAM users, applications, or an AWS service, assume roles whereas the IAM user has full access to all the AWS IAM functionalities.
+48. What are the managed policies in AWS IAM?
+There are two types of managed policies; one that is managed by you and one that is managed by AWS. They are IAM resources that express permissions using IAM policy language. You can create, edit, and manage them separately from the IAM users, groups, and roles to which they are attached.
+
+49. Can you give an example of an IAM policy and a policy summary?
+Here’s an example of an IAM policy to grant access to add, update, and delete objects from a specific folder.
+
+IAM policy
+
+Here’s the example of a policy summary:
+
+policy summary
+
+50. How does AWS IAM help your business?
+IAM enables to:
+
+Manage IAM users and their access - AWS IAM provides secure resource access to multiple users
+Manage access for federated users – AWS allows you to provide secure access to resources in your AWS account to your employees and applications without creating IAM roles
+AWS Interview Questions for Route 53
+51. What is the difference between Latency Based Routing and Geo DNS?
+The Geo Based DNS routing takes decisions based on the geographic location of the request. Whereas, the Latency Based Routing utilizes latency measurements between networks and AWS data centers. Latency Based Routing is used when you want to give your customers the lowest latency possible. On the other hand, Geo Based routing is used when you want to direct the customer to different websites based on the country or region they are browsing from. 
+
+52. What is the difference between a Domain and a Hosted Zone?
+Domain
+A domain is a collection of data describing a self-contained administrative and technical unit. For example, www.simplilearn.com is a domain and a general DNS concept.
+
+Hosted zone
+A hosted zone is a container that holds information about how you want to route traffic on the internet for a specific domain. For example, lms.simplilearn.com is a hosted zone.
+
+53. How does Amazon Route 53 provide high availability and low latency?
+Here’s how Amazon Route 53 provides the resources in question:
+
+Globally Distributed Servers
+Amazon is a global service and consequently has DNS services globally. Any customer creating a query from any part of the world gets to reach a DNS server local to them that provides low latency. 
+
+Dependency
+Route 53 provides a high level of dependability required by critical applications
+
+Optimal Locations
+Route 53 uses a global anycast network to answer queries from the optimal position automatically. 
+
+AWS Interview Questions for Config
+54. How does AWS config work with AWS CloudTrail?
+AWS CloudTrail records user API activity on your account and allows you to access information about the activity. Using CloudTrail, you can get full details about API actions such as the identity of the caller, time of the call, request parameters, and response elements. On the other hand, AWS Config records point-in-time configuration details for your AWS resources as Configuration Items (CIs). 
+
+You can use a CI to ascertain what your AWS resource looks like at any given point in time. Whereas, by using CloudTrail, you can quickly answer who made an API call to modify the resource. You can also use Cloud Trail to detect if a security group was incorrectly configured.
+
+55. Can AWS Config aggregate data across different AWS accounts?
+Yes, you can set up AWS Config to deliver configuration updates from different accounts to one S3 bucket, once the appropriate IAM policies are applied to the S3 bucket.
+
+AWS Interview Questions for Database
+56. How are reserved instances different from on-demand DB instances?
+Reserved instances and on-demand instances are the same when it comes to function. They only differ in how they are billed.
+
+Reserved instances are purchased as one-year or three-year reservations, and in return, you get very low hourly based pricing when compared to the on-demand cases that are billed on an hourly basis.
+
+57. Which type of scaling would you recommend for RDS and why?
+There are two types of scaling - vertical scaling and horizontal scaling. Vertical scaling lets you vertically scale up your master database with the press of a button. A database can only be scaled vertically, and there are 18 different instances in which you can resize the RDS. On the other hand, horizontal scaling is good for replicas. These are read-only replicas that can only be done through Amazon Aurora.
+
+58. What is a maintenance window in Amazon RDS? Will your DB instance be available during maintenance events?
+RDS maintenance window lets you decide when DB instance modifications, database engine version upgrades, and software patching have to occur. The automatic scheduling is done only for patches that are related to security and durability. By default, there is a 30-minute value assigned as the maintenance window and the DB instance will still be available during these events though you might observe a minimal effect on performance.
+
+59. What are the consistency models in DynamoDB?
+There are two consistency models In DynamoDB. First, there is the Eventual Consistency Model, which maximizes your read throughput. However, it might not reflect the results of a recently completed write. Fortunately, all the copies of data usually reach consistency within a second. The second model is called the Strong Consistency Model. This model has a delay in writing the data, but it guarantees that you will always see the updated data every time you read it. 
+
+60. What type of query functionality does DynamoDB support?
+DynamoDB supports GET/PUT operations by using a user-defined primary key. It provides flexible querying by letting you query on non-primary vital attributes using global secondary indexes and local secondary indexes.
